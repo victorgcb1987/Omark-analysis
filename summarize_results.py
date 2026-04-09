@@ -30,6 +30,13 @@ def get_detenga_classification(summary, input):
                 if line:
                     line = line.split(";")
                     id = line[0]
+                    if id not in summary:
+                        summary[id] = {"HOG_ID_assignation": "",
+                                       "HOG_level": "",
+                                       "DeTEnGA_status": "",
+                                       "PFAM_IDs" :"",
+                                       "PFAMs_descriptions": "",
+                                       "mrna_TE_classification": ""}
                     summary[id]["DeTEnGA_status"] = line[-1]
                     summary[id]["PFAM_IDs"] = line[3]
                     summary[id]["PFAMs_descriptions"] = line[4]
