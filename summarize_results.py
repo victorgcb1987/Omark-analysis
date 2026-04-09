@@ -78,7 +78,7 @@ def main():
     with open(arguments["out_filename"], "w") as out_fhand:
         out_fhand.write("SeqID\tHOG_ID\tHOG_level\tDeTEnGA_status\tPFAM_IDs\tPFAM_descriptions\tmRNA_classification\n")
         for seq, values in summary.items():
-            out_fhand.write(f"{seq}\t{values["HOG_ID_assignation"]}\t{values["HOG_level"]}\t{values["DeTEnGA_status"]}\t{values["PFAM_IDs"]}\t{values["PFAMs_descriptions"]}\t{values["mrna_TE_classification"]}\n")
+            out_fhand.write(f'{seq}\t{values["HOG_ID_assignation"]}\t{values["HOG_level"]}\t{values["DeTEnGA_status"]}\t{values["PFAM_IDs"]}\t{values["PFAMs_descriptions"]}\t{values["mrna_TE_classification"]}\n')
 
 
 
