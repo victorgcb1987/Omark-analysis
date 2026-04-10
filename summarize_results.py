@@ -79,7 +79,7 @@ def summary_init(input):
     return summary
 
 
-def parse_omark_consistency_results(summary):
+def parse_omark_consistency_results(summary, input):
     omark_consistency_folder = input / "OMARK_run" / "omark" 
     for file in list(omark_consistency_folder.glob("*.ump")):
         for line in file:
