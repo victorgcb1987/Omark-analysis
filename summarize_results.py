@@ -31,13 +31,14 @@ def get_detenga_classification(summary, input):
                     line = line.split(";")
                     id = line[0]
                     if id not in summary:
-                        summary[id] = {"HOG_ID_assignation": "",
-                                       "HOG_level": "",
-                                       "DeTEnGA_status": "",
-                                       "PFAM_IDs" :"",
-                                       "PFAMs_descriptions": "",
-                                       "mrna_TE_classification": "",
-                                       "OMArk_status": ""}
+                        continue
+                        # summary[id] = {"HOG_ID_assignation": "",
+                        #                "HOG_level": "",
+                        #                "DeTEnGA_status": "",
+                        #                "PFAM_IDs" :"",
+                        #                "PFAMs_descriptions": "",
+                        #                "mrna_TE_classification": "",
+                        #                "OMArk_status": ""}
                     summary[id]["DeTEnGA_status"] = line[-1]
                     summary[id]["PFAM_IDs"] = line[3]
                     summary[id]["PFAMs_descriptions"] = line[4]
@@ -64,7 +65,7 @@ def parse_omamer_results(summary, input):
 def summary_init(input):
     summary = {}
     seqs_folder = input / "input_sequences"
-    for file in list(seqs_folder.glob("*.proteins.fasta")):
+    for file in list(seqs_folder.glob("*.proteins_longest_isoform.fasta")):
         with open(file) as fhand:
             for line in fhand:
                 if line.startswith(">"):
