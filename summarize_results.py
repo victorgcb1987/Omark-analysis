@@ -36,7 +36,8 @@ def get_detenga_classification(summary, input):
                                        "DeTEnGA_status": "",
                                        "PFAM_IDs" :"",
                                        "PFAMs_descriptions": "",
-                                       "mrna_TE_classification": ""}
+                                       "mrna_TE_classification": "",
+                                       "OMArk_status": ""}
                     summary[id]["DeTEnGA_status"] = line[-1]
                     summary[id]["PFAM_IDs"] = line[3]
                     summary[id]["PFAMs_descriptions"] = line[4]
@@ -58,6 +59,7 @@ def parse_omamer_results(summary, input):
                     HOGLevel = line[2]
                     summary[seqID]["HOG_ID_assignation"] = HOGID
                     summary[seqID]["HOG_level"] = HOGLevel
+                    
 
 def summary_init(input):
     summary = {}
@@ -69,11 +71,24 @@ def summary_init(input):
                     id = line.split()[0].replace(">", "")
                     summary[id] = {"HOG_ID_assignation": "",
                                    "HOG_level": "",
+                                   "OMArk_status": "",
                                    "DeTEnGA_status": "",
                                    "PFAM_IDs" :"",
                                    "PFAMs_descriptions": "",
                                    "mrna_TE_classification": ""}
     return summary
+
+
+def parse_omark_consistency_results(summary):
+    omark_consistency_folder = input / "OMARK_run" / "omark" 
+    for file in list(omark_consistency_folder.glob("*.ump")):
+        for line in file:
+            if line.startswith(">"):
+                category = line.rstrip().replace(">", "")
+            else:
+                id = line.rstrip()
+                summary[id]["OMArk_status"] = category
+
 
 
 
@@ -82,10 +97,11 @@ def main():
     summary = summary_init(arguments["input_dir"])
     parse_omamer_results(summary, arguments["input_dir"])
     get_detenga_classification(summary, arguments["input_dir"])
+    parse_omark_consistency_results(summary, arguments["input_dir"])
     with open(arguments["out_filename"], "w") as out_fhand:
-        out_fhand.write("SeqID\tHOG_ID\tHOG_level\tDeTEnGA_status\tPFAM_IDs\tPFAM_descriptions\tmRNA_classification\n")
+        out_fhand.write("SeqID\tHOG_ID\tHOG_level\tOMArk_status\tDeTEnGA_status\tPFAM_IDs\tPFAM_descriptions\tmRNA_classification\n")
         for seq, values in summary.items():
-            out_fhand.write(f'{seq}\t{values["HOG_ID_assignation"]}\t{values["HOG_level"]}\t{values["DeTEnGA_status"]}\t{values["PFAM_IDs"]}\t{values["PFAMs_descriptions"]}\t{values["mrna_TE_classification"]}\n')
+            out_fhand.write(f'{seq}\t{values["HOG_ID_assignation"]}\t{values["HOG_level"]}\t{values["OMArk_status"]}\t{values["DeTEnGA_status"]}\t{values["PFAM_IDs"]}\t{values["PFAMs_descriptions"]}\t{values["mrna_TE_classification"]}\n')
 
 
 
