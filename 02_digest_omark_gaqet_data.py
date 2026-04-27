@@ -58,7 +58,6 @@ def get_omamer_results(input_dir):
                     continue
                 if line:
                     line = line.rstrip().split("\t")
-                    print(line)
                     seqID = line[0]
                     HOGID = line[1]
                     if "NA" in HOGID:
@@ -93,6 +92,7 @@ def get_summary_by_class(hog_classification,
         for seqID in seqIDs:
             detenga = detenga_classification.get(seqID, "P0M0")
             omark = omark_classification[seqID]
+            print(seqID)
             summary[hog][omark][detenga] += 1
     return summary
 
