@@ -92,7 +92,6 @@ def get_summary_by_class(hog_classification,
         for seqID in seqIDs:
             detenga = detenga_classification.get(seqID, "P0M0")
             omark = omark_classification[seqID]
-            print(seqID)
             summary[hog][omark][detenga] += 1
     return summary
 
@@ -123,6 +122,7 @@ def main():
             summary_by_class = get_summary_by_class(hog_classification, 
                                                     omark_classification, 
                                                     detenga_classification)
+            print(summary_by_class)
             for hog, omark_classification in summary_by_class.items():
                 results = []
                 for category, detenga in omark_classification.items():
