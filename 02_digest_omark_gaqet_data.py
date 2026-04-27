@@ -123,7 +123,6 @@ def main():
             summary_by_class = get_summary_by_class(hog_classification, 
                                                     omark_classification, 
                                                     detenga_classification)
-            print(summary_by_class)
             for hog, omark_classification in summary_by_class.items():
                 results = []
                 for category, detenga in omark_classification.items():
@@ -131,6 +130,7 @@ def main():
                 line = f'{hog},{species},{taxid},{",".join(results)}\n'
                 summary_out_fhand.write(line)
                 summary_out_fhand.flush()
+                
                 
 
 
