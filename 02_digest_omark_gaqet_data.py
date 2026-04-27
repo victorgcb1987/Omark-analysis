@@ -60,7 +60,7 @@ def get_omamer_results(input_dir):
                     line = line.rstrip().split("\t")
                     seqID = line[0]
                     HOGID = line[1]
-                    if "NA" in HOGID:
+                    if "N/A" in HOGID:
                         HOGID = "Unknown"
                     if HOGID not in omamer_results:
                         omamer_results[HOGID] = [seqID]
