@@ -30,6 +30,8 @@ def main():
         new_hogs_with_Tes = 0
         first = True
         for row in DictReader(input_fhand, delimiter=","):
+            if "." in row["HOGID"]:
+                row["HOGID"] = row["HOGID"].split(".")[0]
             if first:
                 current_accession = row["Accession"]
                 first = False
