@@ -1,0 +1,156 @@
+species,accession,taxid
+Cladophialophora immunda,GCA_000785585.1,569365
+Aspergillus calidoustus,GCA_001511075.1,454130
+Aspergillus pseudoustus,GCA_044049465.1,1810923
+Aspergillus keveii,GCA_044089335.1,714993
+Aspergillus insuetus,GCA_045784725.1,469274
+Fusarium oxysporum f. sp. lycopersici 4287,GCA_000149955.2,5507
+Fusarium oxysporum f. sp. narcissi,GCA_004141715.1,5507
+Ilyonectria destructans,GCA_020740775.1,64609
+Ilyonectria sp. MPI-CAGE-AT-0026,GCA_020744155.1,2824670
+Dactylonectria macrodidyma,GCA_020744425.1,307937
+Ilyonectria robusta,GCA_021365365.1,1079257
+Diaporthe sp. PMI_573,GCA_021399435.1,2614600
+Thozetella sp. PMI_491,GCA_021432635.1,1506992
+Fusarium oxysporum,GCA_025331925.1,5507
+Fusarium oxysporum f. sp. albedinis,GCA_026229875.1,5507
+Fusarium oxysporum f. sp. albedinis,GCA_032206225.1,5507
+Clonostachys chloroleuca,GCA_037952775.1,1926264
+Fusarium oxysporum f. sp. phaseoli,GCA_054130785.1,5507
+Clonostachys rosea f. rosea IK726,GCA_902827195.2,29856
+Fusarium oxysporum f. sp. lycopersici 4287,GCF_000149955.1,5507
+Ilyonectria robusta,GCF_021365365.1,1079257
+Wickerhamomyces ciferrii,GCA_000313485.1,1041607
+Wickerhamomyces anomalus NRRL Y-366-8,GCA_001661255.1,4927
+Ascoidea rubescens DSM 1968,GCA_001661345.1,54195
+Saccharomyces cerevisiae,GCA_012275245.1,4932
+Wickerhamomyces pijperi,GCA_020536225.1,599730
+Saccharomyces cerevisiae,GCA_030036175.2,4932
+Saccharomycopsis crataegensis,GCA_037102585.1,43959
+Saccharomyces cerevisiae,GCA_949123715.1,4932
+Wickerhamomyces anomalus,GCA_965211605.1,4927
+Wickerhamomyces ciferrii,GCF_000313485.1,1041607
+Wickerhamomyces anomalus NRRL Y-366-8,GCF_001661255.1,4927
+Ascoidea rubescens DSM 1968,GCF_001661345.1,54195
+Saccharomycopsis crataegensis,GCF_037102585.1,43959
+Pichia kudriavzevii,GCA_000764455.1,4909
+Candidozyma auris,GCA_001189475.1,498019
+Candida albicans,GCA_014049485.1,5476
+Ogataea philodendri,GCA_020536065.1,1378263
+Metschnikowia pulcherrima,GCA_029606385.1,27326
+[Candida] boidinii,GCA_030267665.1,5477
+Ambrosiozyma monospora,GCA_030267745.1,43982
+Ambrosiozyma monospora,GCA_030267765.1,43982
+Candidozyma auris,GCF_001189475.1,498019
+Ogataea philodendri,GCF_020536065.1,1378263
+Sphaerobolus stellatus SS14,GCA_000827215.1,68786
+Athelia psychrophila,GCA_001630335.1,1759441
+Exidia glandulosa HHB12029,GCA_001632375.1,5219
+Armillaria gallica,GCA_002307695.1,47427
+Dendrothele bispora CBS 962.96,GCA_004369135.1,1314803
+Gymnopus androsaceus JB14,GCA_009733575.1,1447940
+Ephemerocybe angulata,GCA_014188975.1,980116
+Mycena venus,GCA_014462655.1,2733690
+Mycena galopus ATCC 62051,GCA_014925785.1,41248
+Hymenopellis radicata,GCA_015501595.1,937743
+Ceratobasidium sp. 428,GCA_019623705.1,2600207
+Coprinopsis sp. MPI-PUGE-AT-0042,GCA_020736565.1,2826081
+Mycena vitilis,GCA_029203975.1,1033281
+Mycena sanguinolenta,GCA_029203985.1,230812
+Mycena capillaripes,GCA_029204075.1,230804
+Mycena sp. CBHHK59/15,GCA_029204085.1,1940295
+Mycena vulgaris,GCA_029204335.1,1033282
+Mycena alexandri,GCA_029233265.1,1745969
+Mycena pura,GCA_029281405.1,153505
+Mycena epipterygia,GCA_029281465.1,230806
+Mycena filopes,GCA_029281495.1,858877
+Mycena crocata,GCA_029281795.1,220801
+Mycena amicta,GCA_029282125.1,380012
+Mycena rebaudengoi,GCA_029282285.1,1045383
+Mycena albidolilacea,GCA_029282495.1,1033008
+Mycena latifolia,GCA_029289555.1,1033247
+Mycena galericulata,GCA_029289565.1,71905
+Mycena floridula,GCA_029320655.1,1033242
+Roridomyces roridus,GCA_029378245.1,1738132
+Mycena rosella,GCA_029378255.1,1033263
+Mycena olivaceomarginata,GCA_029378375.1,230810
+Mycena metata,GCA_029378385.1,1033252
+Mycena leptocephala,GCA_029378395.1,230808
+Mycena maculata,GCA_029448575.1,230809
+Mycena polygramma,GCA_029449255.1,230801
+Marasmius tenuissimus,GCA_029532415.1,585030
+Favolaschia claudopus,GCA_037176885.1,2862362
+Saitozyma sp. JCM 24511,GCA_001600855.1,1639000
+Saitozyma podzolica,GCA_003942215.1,1890683
+Mollisia scopiformis,GCA_001500285.1,149040
+Hyaloscypha bicolor E,GCA_002865645.1,2482752
+Hyaloscypha variabilis F,GCA_002865655.1,2482757
+Cadophora sp. DSE1049,GCA_003073865.1,1485229
+Stipitochalara longipes BDJ,GCA_009732865.1,112123
+Acephala macrosclerotiorum,GCA_014904845.1,886606
+Leptodontidium sp. MPI-SDFR-AT-0119,GCA_020726505.1,2826080
+Leptodontidium sp. 2 PMI_412,GCA_021432625.1,1485227
+Leptodophora sp. 'Broadleaf-Isolate-01',GCA_046255075.1,3375984
+Phialocephala subalpina,GCA_900073065.1,576137
+Mollisia scopiformis,GCF_001500285.1,149040
+Hyaloscypha bicolor E,GCF_002865645.1,2482752
+Rhizopus microsporus,GCA_011764045.1,58291
+Rhizopus arrhizus,GCA_011764055.1,64495
+Rhizopus arrhizus,GCA_011764185.1,64495
+Rhizopus arrhizus,GCA_011764225.1,64495
+Rhizopus arrhizus,GCA_011952115.2,64495
+Rhizoclosmatium globosum,GCA_002104985.1,329046
+Batrachochytrium salamandrivorans,GCA_021556665.1,1357716
+Cladochytrium replicatum,GCA_025526935.1,109936
+Zopfochytrium polystomum,GCA_025765615.1,2211651
+Austropuccinia psidii MF-1,GCA_000469055.2,181123
+Ascobolus immersus RN42,GCA_003788565.2,5191
+Choiromyces venosus 120613-1,GCA_003788595.2,44640
+Meredithblackwellia eburnea MCA 4105,GCA_051356775.1,1323573
+Phenoliferia psychrophenolica,GCA_051911615.1,418498
+Microbotryum saponariae,GCA_900100905.1,289078
+Microbotryum saponariae,GCA_900102585.1,289078
+Microbotryum silenes-dioicae,GCA_900120095.1,796604
+Wallemia mellicola CBS 633.66,GCA_000263375.1,1708541
+Wallemia ichthyophaga EXF-994,GCA_000400465.1,245174
+Wallemia mellicola CBS 633.66,GCF_000263375.1,1708541
+Wallemia ichthyophaga EXF-994,GCF_000400465.1,245174
+Rhizophagus irregularis DAOM 181602=DAOM 197198,GCA_002897155.2,588596
+Rhizophagus irregularis,GCA_903189775.1,588596
+Gigaspora margarita,GCA_910592245.1,4874
+Linnemannia elongata AG-77,GCA_001651415.1,310910
+Mortierella sp. GBA39,GCA_015502485.1,1896189
+Benniella sp.,GCA_033807495.1,2810443
+Linnemannia gamsii,GCA_033807515.1,64522
+Smittium culicis,GCA_001970855.1,133412
+Linderina pennispora,GCA_002104995.1,61395
+Spiromyces aspiralis,GCA_027478575.1,68401
+Coemansia sp. S17,GCA_027575625.1,2849864
+Kickxella alabastrina,GCA_027575665.1,61397
+Coemansia sp. RSA 486,GCA_027575725.1,2849860
+Coemansia sp. RSA 2703,GCA_027575745.1,2849857
+Linderina pennispora,GCA_027575835.1,61395
+Coemansia sp. S3946,GCA_027577135.1,2761407
+Coemansia sp. S2,GCA_027577155.1,2663911
+Coemansia sp. S16,GCA_027577195.1,2761417
+Coemansia sp. S155-1,GCA_027577215.1,2663888
+Coemansia sp. S142-1,GCA_027577235.1,2663917
+Coemansia sp. S100,GCA_027577255.1,2663912
+Coemansia sp. RSA 922,GCA_027577415.1,2789323
+Coemansia sp. RSA 485,GCA_027577815.1,2789351
+Coemansia sp. RSA 2673,GCA_027577955.1,2663897
+Coemansia sp. RSA 2611,GCA_027578055.1,2761403
+Coemansia sp. RSA 2531,GCA_027578175.1,2663878
+Coemansia sp. RSA 455,GCA_027578215.1,2663915
+Coemansia sp. RSA 2337,GCA_027578255.1,2663906
+Coemansia sp. RSA 2424,GCA_027578275.1,2663879
+Coemansia sp. RSA 2049,GCA_027578335.1,2663914
+Coemansia sp. RSA 1939,GCA_027578395.1,2761428
+Coemansia sp. RSA 1804,GCA_027578815.1,2512253
+Coemansia sp. RSA 1285,GCA_027578935.1,2663902
+Linderina pennispora,GCF_002104995.1,61395
+Letharia columbiana,GCA_014066305.1,112416
+Lobaria immixta,GCA_022814215.1,669869
+Lepraria finkii,GCA_042464665.1,1340010
+Usnea florida,GCA_052784015.1,111620
+Letharia columbiana,GCF_014066305.1,112416
