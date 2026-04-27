@@ -119,6 +119,7 @@ def main():
             hog_classification = get_omamer_results(gaqet_dir)
             omark_classification = get_omark_results(gaqet_dir)
             detenga_classification = get_detenga_results(gaqet_dir)
+            print(detenga_classification)
             summary_by_class = get_summary_by_class(hog_classification, 
                                                     omark_classification, 
                                                     detenga_classification)
