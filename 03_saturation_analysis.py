@@ -46,6 +46,9 @@ def main():
         num_accessions = num_accessions[1:]
         num_HOGS = num_HOGS[1:]
         num_HOGs_with_TEs = num_HOGs_with_TEs[1:]
+        print("Num_Accessions", num_accessions)
+        print("Num_HOGS", num_HOGS)
+        print("Num_HOGS_with_TEs", num_HOGs_with_TEs)
 
 
 
