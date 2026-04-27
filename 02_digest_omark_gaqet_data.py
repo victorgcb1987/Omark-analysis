@@ -107,7 +107,7 @@ def main():
     #header1
     #hogID,species,[OMARKS_status]
     arguments = get_arg_values()
-    with open(f"{arguments["out_prefix"]}_classification_summary.csv") as summary_out_fhand:
+    with open(f'{arguments["out_prefix"]}_classification_summary.csv') as summary_out_fhand:
         summary_out_fhand.write(f'HOGID,Species,taxID,{",".join(OMARK_CLASS)}\n')
         for row in DictReader(open(arguments["metadata"]), delimiter=","):
             species = row["species"]
