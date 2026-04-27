@@ -113,7 +113,7 @@ def main():
             species = row["species"]
             accession = row["accession"]
             taxid = row["taxid"]
-            input_dir = arguments["input_dir"] / "data" / accession
+            input_dir = arguments["input_dir"] / "ncbi_dataset" / "data" / accession
             print(input_dir)
             #It assumes that only a subdir by accession!!!!!!
             gaqet_dir = [dir for dir in input_dir.glob("*") if not dir.is_file()][0]
