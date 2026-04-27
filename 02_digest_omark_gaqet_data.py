@@ -44,7 +44,7 @@ def get_detenga_results(input_dir):
                     line = line.split(";")
                     seqID = line[0]
                     detenga = line[-1]
-    detenga_results[seqID] = detenga
+                    detenga_results[seqID] = detenga
     return detenga_results
 
 
