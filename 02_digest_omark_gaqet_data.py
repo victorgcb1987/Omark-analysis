@@ -26,7 +26,7 @@ def parse_arguments():
 def get_arg_values():
     parser = parse_arguments()
     return {"input_dir": Path(parser.input_dir),
-            "out_filename": Path(parser.out_filename),
+            "out_prefix": Path(parser.out_filename),
             "metadata": Path(parser.metadata_file)}
 
 
