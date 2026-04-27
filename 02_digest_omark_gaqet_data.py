@@ -110,7 +110,7 @@ def main():
     #hogID,species,[OMARKS_status]
     arguments = get_arg_values()
     with open(f'{arguments["out_prefix"]}_classification_summary.csv', "w") as summary_out_fhand:
-        summary_out_fhand.write(f'HOGID,Species,taxID,{",".join(OMARK_CLASS)}\n')
+        summary_out_fhand.write(f'HOGID,Accession,Species,TaxID,{",".join(OMARK_CLASS)}\n')
         for row in DictReader(open(arguments["metadata"]), delimiter=","):
             species = row["species"]
             accession = row["accession"]
@@ -129,7 +129,7 @@ def main():
                 results = []
                 for category, detenga in omark_classification.items():
                     results.append(detenga_line(detenga))
-                line = f'{hog},{species},{taxid},{",".join(results)}\n'
+                line = f'{hog},{accession},{species},{taxid},{",".join(results)}\n'
                 summary_out_fhand.write(line)
                 summary_out_fhand.flush()
 
