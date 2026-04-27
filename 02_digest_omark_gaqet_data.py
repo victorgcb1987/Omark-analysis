@@ -113,13 +113,12 @@ def main():
             accession = row["accession"]
             taxid = row["taxid"]
             input_dir = arguments["input_dir"] / "ncbi_dataset" / "data" / accession
-            print(input_dir)
+            print(input_dir, species)
             #It assumes that only a subdir by accession!!!!!!
             gaqet_dir = [dir for dir in input_dir.glob("*") if not dir.is_file()][0]
             hog_classification = get_omamer_results(gaqet_dir)
             omark_classification = get_omark_results(gaqet_dir)
             detenga_classification = get_detenga_results(gaqet_dir)
-            print(detenga_classification)
             summary_by_class = get_summary_by_class(hog_classification, 
                                                     omark_classification, 
                                                     detenga_classification)
