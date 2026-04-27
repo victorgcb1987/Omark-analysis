@@ -8,7 +8,7 @@ OMARK_CLASS = ["Consistent_Full", "Consistent_Partial",
                "Consistent_Fragment", "Inconsistent_Full",
                "Inconsistent_Partial", "Inconsistent_Fragment",
                "Contamination_Full", "Contamination_Partial",
-               "Contamination_Fragment", "Unknown"]
+               "Contamination_Fragment"]
 
 DETENGA_CLASS = ["PcpM0", "PteMte", "P0Mte", "PchMte", "PchM0", "PteM0", "PcpMte", "P0M0"]
 
@@ -113,7 +113,7 @@ def main():
             species = row["species"]
             accession = row["accession"]
             taxid = row["taxid"]
-            input_dir = arguments["input_dir"] / accession
+            input_dir = arguments["input_dir"] / "data" / accession
             print(input_dir)
             #It assumes that only a subdir by accession!!!!!!
             gaqet_dir = [dir for dir in input_dir.glob("*") if not dir.is_file()][0]
