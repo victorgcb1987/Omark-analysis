@@ -8,7 +8,7 @@ OMARK_CLASS = ["Consistent_Full", "Consistent_Partial",
                "Consistent_Fragment", "Inconsistent_Full",
                "Inconsistent_Partial", "Inconsistent_Fragment",
                "Contamination_Full", "Contamination_Partial",
-               "Contamination_Fragment"]
+               "Contamination_Fragment", "Unknown"]
 
 DETENGA_CLASS = ["PcpM0", "PteMte", "P0Mte", "PchMte", "PchM0", "PteM0", "PcpMte", "P0M0"]
 
