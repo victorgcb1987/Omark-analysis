@@ -98,7 +98,9 @@ def get_summary_by_class(hog_classification,
 def detenga_line(detenga):
     line = []
     for category in DETENGA_CLASS:
-        line.append(f"{category}:{detenga[category]}")
+        cat_count = detenga[category]
+        if cat_count > 0:
+            line.append(f"{category}:{detenga[category]}")
     return ";".join(line)
 
 
@@ -130,7 +132,7 @@ def main():
                 line = f'{hog},{species},{taxid},{",".join(results)}\n'
                 summary_out_fhand.write(line)
                 summary_out_fhand.flush()
-                
+
                 
 
 
