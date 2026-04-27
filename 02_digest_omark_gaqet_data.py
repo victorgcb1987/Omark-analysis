@@ -99,7 +99,8 @@ def detenga_line(detenga):
     line = []
     for category in DETENGA_CLASS:
         line.append(f"{category}:{detenga[category]}")
-        return ";".join(line)
+    return ";".join(line)
+
 
 def main():
     '''Needs a dir generated with script 00_run_gaqet_commands'''
@@ -127,7 +128,7 @@ def main():
                 results = []
                 for category, detenga in omark_classification.items():
                     results.append(detenga_line(detenga))
-                line = f'{hog},{species},{taxid}{",".join(results)}\n'
+                line = f'{hog},{species},{taxid},{",".join(results)}\n'
                 summary_out_fhand.write(line)
                 summary_out_fhand.flush()
                 
