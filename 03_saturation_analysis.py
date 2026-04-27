@@ -28,7 +28,11 @@ def main():
         num_HOGs_with_TEs = [0]
         new_hogs = 0
         new_hogs_with_Tes = 0
+        first = True
         for row in DictReader(input_fhand, delimiter=","):
+            if first:
+                current_accession = row["Accession"]
+                first = False
             if row["Accession"] != current_accession:
                 num_accessions.append(num_accessions[-1] + 1)
                 num_HOGS.append(num_HOGS[-1]+new_hogs)
@@ -43,12 +47,13 @@ def main():
                 if row["HOGID"] not in hogs_with_tes_found:
                     hogs_with_tes_found.append(row["HOGID"])
                     new_hogs_with_Tes += 1
-        num_accessions = num_accessions[1:]
-        num_HOGS = num_HOGS[1:]
-        num_HOGs_with_TEs = num_HOGs_with_TEs[1:]
         print("Num_Accessions", num_accessions)
         print("Num_HOGS", num_HOGS)
         print("Num_HOGS_with_TEs", num_HOGs_with_TEs)
+        with open("saturation_analysis.tsv") as out_fhand:
+            out_fhand.write("NumAccessions,NumHOGS,NumTEsHOGs\n")
+            for pos in range in (0, len(num_accessions)):
+                out_fhand.write(f'{num_accessions[pos]},{num_HOGS[pos]},{num_HOGs_with_TEs[pos]}\n')
 
 
 
