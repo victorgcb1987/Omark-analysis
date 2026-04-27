@@ -114,6 +114,7 @@ def main():
             accession = row["accession"]
             taxid = row["taxid"]
             input_dir = arguments["input_dir"] / accession
+            print(input_dir)
             #It assumes that only a subdir by accession!!!!!!
             gaqet_dir = [dir for dir in input_dir.glob("*") if not dir.is_file()][0]
             hog_classification = get_omamer_results(gaqet_dir)
