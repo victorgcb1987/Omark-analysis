@@ -129,6 +129,7 @@ def main():
                     results.append(detenga_line(detenga))
                 line = f'{hog},{species},{taxid}{",".join(results)}\n'
                 summary_out_fhand.write(line)
+                summary_out_fhand.flush()
                 
 
 
