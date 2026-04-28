@@ -14,7 +14,7 @@ OMARK_CLASS = ["Consistent_Full", "Consistent_Partial",
 
 IGNORE = ["Lupinus_albus", "Citrullus_lanatus", "Chelidonium_majus", 
           "Aegilops_comosa", "Mangifera_indica", "Gossypium_arboreum",
-          "Humulus_lupulus", "Theobroma_cacao"]
+          "Humulus_lupulus", "Theobroma_cacao", "Parasponia_andersonii"]
 
 DETENGA_CLASS = ["PcpM0", "PteMte", "P0Mte", "PchMte", "PchM0", "PteM0", "PcpMte", "P0M0"]
 
