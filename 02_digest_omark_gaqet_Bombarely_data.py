@@ -12,7 +12,7 @@ OMARK_CLASS = ["Consistent_Full", "Consistent_Partial",
                "Contamination_Full", "Contamination_Partial",
                "Contamination_Fragment", "Unknown"]
 
-IGNORE = ["Lupinus_albus", "Citrullus_lanatus", "Chelidonium_majus"]
+IGNORE = ["Lupinus_albus", "Citrullus_lanatus", "Chelidonium_majus", "Aegilops_comosa"]
 
 DETENGA_CLASS = ["PcpM0", "PteMte", "P0Mte", "PchMte", "PchM0", "PteM0", "PcpMte", "P0M0"]
 
