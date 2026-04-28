@@ -52,7 +52,7 @@ def main():
         print("Num_Accessions", num_accessions)
         print("Num_HOGS", num_HOGS)
         print("Num_HOGS_with_TEs", num_HOGs_with_TEs)
-        with open("saturation_analysis.tsv", "w") as out_fhand:
+        with open("saturation_analysis_root.tsv", "w") as out_fhand:
             out_fhand.write("NumAccessions,NumHOGS,NumTEsHOGs\n")
             for pos in range(0, len(num_accessions)):
                 out_fhand.write(f'{num_accessions[pos]},{num_HOGS[pos]},{num_HOGs_with_TEs[pos]}\n')
