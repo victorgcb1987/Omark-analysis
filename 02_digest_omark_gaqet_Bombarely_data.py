@@ -141,6 +141,7 @@ def main():
         summary_out_fhand.write(f'HOGID,Accession,Species,TaxID,{",".join(OMARK_CLASS)}\n')
         records = yaml.safe_load(open(input_yaml))
         for species, features in records.items():
+            print(species)
             for feature, values in features.items():
                 if "NCBI" in feature:
                     accession, gaqet_dir = get_metadata(values)
