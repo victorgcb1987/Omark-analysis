@@ -134,6 +134,7 @@ def main():
     input_yaml = args["YAML"]
     out_filename = args["out_filename"]
     with open (out_filename, "w") as summary_out_fhand:
+        summary_out_fhand.write(f'HOGID,Accession,Species,TaxID,{",".join(OMARK_CLASS)}\n')
         records = yaml.safe_load(open(input_yaml))
         for species, features in records.items():
             for feature, values in features.items():
