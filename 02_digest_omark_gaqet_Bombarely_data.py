@@ -129,7 +129,7 @@ def get_taxid(species):
 
 
 def main():
-    args = get_arg_values()["YAML"]
+    args = get_arg_values()
     input_yaml = args["YAML"]
     out_filename = args["out_filename"]
     with open (out_filename) as summary_out_fhand:
