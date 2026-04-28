@@ -28,7 +28,7 @@ def parse_arguments():
 def get_arg_values():
     parser = parse_arguments()
     return {"YAML": Path(parser.YAML),
-            "out_filename": Path(parser.out_fiename)}
+            "out_filename": Path(parser.out_filename)}
 
 
 def get_detenga_results(input_dir):
