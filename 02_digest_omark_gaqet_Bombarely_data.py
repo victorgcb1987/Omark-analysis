@@ -132,7 +132,7 @@ def main():
     args = get_arg_values()
     input_yaml = args["YAML"]
     out_filename = args["out_filename"]
-    with open (out_filename) as summary_out_fhand:
+    with open (out_filename, "w") as summary_out_fhand:
         records = yaml.safe_load(open(input_yaml))
         for species, features in records.items():
             for feature, values in features.items():
