@@ -108,6 +108,7 @@ def detenga_line(detenga):
 def get_metadata(values):
     accession = values["report"].split("/")[7]
     accession = accession.split("_")
+    print(accession)
     accession = f'{accession[1]}_{accession[2]}.{accession[3]}'
     gaqet_dir = Path(values["gaqet_results"]).parents[0]
     return accession, gaqet_dir
