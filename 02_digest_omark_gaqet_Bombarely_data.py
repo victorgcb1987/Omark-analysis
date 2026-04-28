@@ -138,7 +138,7 @@ def main():
         records = yaml.safe_load(open(input_yaml))
         for species, features in records.items():
             for feature, values in features.items():
-                if "NCBI" in feature:
+                if "NCBI_GCA" in feature or "NCBI_GCF" in feature:
                     accession, gaqet_dir = get_metadata(values)
                     hog_classification = get_omamer_results(gaqet_dir)
                     omark_classification = get_omark_results(gaqet_dir)
