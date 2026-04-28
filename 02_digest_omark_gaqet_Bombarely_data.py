@@ -151,9 +151,9 @@ def main():
                         results = []
                         for category, detenga in omark_classification.items():
                             results.append(detenga_line(detenga))
-                            line = f'{hog},{accession},{species},{taxid},{",".join(results)}\n'
-                            summary_out_fhand.write(line)
-                            summary_out_fhand.flush()
+                        line = f'{hog},{accession},{species},{taxid},{",".join(results)}\n'
+                        summary_out_fhand.write(line)
+                        summary_out_fhand.flush()
 
 
 if __name__ == "__main__":
