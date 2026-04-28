@@ -106,7 +106,7 @@ def detenga_line(detenga):
 
 
 def get_metadata(values):
-    accession = values["report"].split("/")[7]
+    accession = values["report"].split("/")[8]
     accession = accession.split("_")
     print(accession)
     accession = f'{accession[1]}_{accession[2]}.{accession[3]}'
