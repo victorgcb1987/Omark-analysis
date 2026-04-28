@@ -109,7 +109,11 @@ def get_metadata(values):
     accession = values["report"].split("/")[8]
     accession = accession.split("_")
     print(accession)
-    accession = f'{accession[1]}_{accession[2]}.{accession[3]}'
+    try:
+        accession = f'{accession[1]}_{accession[2]}.{accession[3]}'
+    except:
+        accession = "N/A"
+    print(accession)
     gaqet_dir = Path(values["gaqet_results"]).parents[0]
     return accession, gaqet_dir
 
@@ -138,7 +142,7 @@ def main():
         records = yaml.safe_load(open(input_yaml))
         for species, features in records.items():
             for feature, values in features.items():
-                if "NCBI_GCA" in feature or "NCBI_GCF" in feature:
+                if "NCBI" in feature:
                     accession, gaqet_dir = get_metadata(values)
                     hog_classification = get_omamer_results(gaqet_dir)
                     omark_classification = get_omark_results(gaqet_dir)
