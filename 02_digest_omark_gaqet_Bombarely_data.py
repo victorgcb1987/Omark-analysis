@@ -145,7 +145,7 @@ def main():
                     summary_by_class = get_summary_by_class(hog_classification, 
                                                     omark_classification, 
                                                     detenga_classification)
-                    taxid = get_taxid(values["species"])
+                    taxid = get_taxid(features["species"])
                     for hog, omark_classification in summary_by_class.items():
                         results = []
                         for category, detenga in omark_classification.items():
