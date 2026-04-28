@@ -12,6 +12,8 @@ OMARK_CLASS = ["Consistent_Full", "Consistent_Partial",
                "Contamination_Full", "Contamination_Partial",
                "Contamination_Fragment", "Unknown"]
 
+IGNORE = ["Lupinus_albus"]
+
 DETENGA_CLASS = ["PcpM0", "PteMte", "P0Mte", "PchMte", "PchM0", "PteM0", "PcpMte", "P0M0"]
 
 
@@ -141,6 +143,8 @@ def main():
         summary_out_fhand.write(f'HOGID,Accession,Species,TaxID,{",".join(OMARK_CLASS)}\n')
         records = yaml.safe_load(open(input_yaml))
         for species, features in records.items():
+            if species in IGNORE:
+                continue
             print(species)
             for feature, values in features.items():
                 if "NCBI" in feature:
