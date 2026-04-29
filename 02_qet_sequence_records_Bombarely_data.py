@@ -33,7 +33,8 @@ def parse_arguments():
 def get_arg_values():
     parser = parse_arguments()
     return {"YAML": Path(parser.YAML),
-            "out_filename": Path(parser.out_filename)}
+            "out_filename": Path(parser.out_filename),
+            "descriptions": Path(parser.descriptions)}
 
 
 def get_detenga_results(input_dir):
@@ -181,7 +182,7 @@ def main():
                             pfams = ""
                             description = ""
                             tesorter = ""
-                            
+
                         line = f'{seqID},{accession},{species}{taxid},{hog["HOG"]},'
                         line += f'{hog["description"]},{seq_OMArk_class},'
                         line += f'{detenga_status},{pfams},{description},{tesorter}\n'
