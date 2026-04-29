@@ -136,7 +136,7 @@ def get_metadata(values):
 
 
 def get_taxid(species):    
-        cmd = "datasets summary taxonomy taxon \"{}\"".format(species)
+        cmd = "datasets summary taxonomy taxon \"{}\"".format(" ".join(species.split("_")))
         metadata = subprocess.run(cmd, shell=True, capture_output=True)
         
         if metadata.returncode == 0:
@@ -182,7 +182,7 @@ def main():
                             description = ""
                             tesorter = ""
 
-                        line = f'{seqID},{accession},{species}{taxid},{hog["HOG"]},'
+                        line = f'{seqID},{accession},{species},{taxid},{hog["HOG"]},'
                         line += f'{hog["description"]},{seq_OMArk_class},'
                         line += f'{detenga_status},{pfams},{description},{tesorter}\n'
                         summary_out_fhand.write(line)
