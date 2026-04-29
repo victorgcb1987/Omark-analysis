@@ -156,7 +156,7 @@ def main():
     out_filename = args["out_filename"]
     descriptions = {line.split(",")[0]: line.split(",")[-1].rstrip() for line in open(args["descriptions"])}
     with open (out_filename, "w") as summary_out_fhand:
-        summary_out_fhand.write("SeqID,Accession,Species,TaxID,HOGID,HOG_Description,OMARK_status,DeTEnGA_status,PFAMs,PFAMs_Description,TesorterClass")
+        summary_out_fhand.write("SeqID,Accession,Species,TaxID,HOGID,HOG_Description,OMARK_status,DeTEnGA_status,PFAMs,PFAMs_Description,TesorterClass\n")
         records = yaml.safe_load(open(input_yaml))
         for species, features in records.items():
             if species in IGNORE:
