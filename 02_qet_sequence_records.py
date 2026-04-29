@@ -51,7 +51,7 @@ def get_description(HOG, descriptions):
         return "Unknown"
     if "." in check:
         check = check.split(".")[0]
-        return descriptions[check]
+    return descriptions[check]
 
 def get_omamer_results(input_dir,descriptions):
     omamer_results = {}
