@@ -163,7 +163,6 @@ def main():
                 continue
             for feature, values in features.items():
                 if "NCBI" in feature:
-                    species = feature["species"]
                     taxid = get_taxid(species)
                     accession, gaqet_dir = get_metadata(values)
                     hog_classification = get_omamer_results(gaqet_dir, descriptions)
