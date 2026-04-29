@@ -8,7 +8,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(prog="",
                                     description="Summarize AGAT, DeTEnGA and OMA HOGS from GAQET",
                                     )
-    parser.add_argument("--input_folder", "-i", help="input dir")
+    parser.add_argument("--input_dir", "-i", help="input dir")
     parser.add_argument("--metadata", "-m", help="input metadata")
     parser.add_argument("--out_filename", "-o", help="out filename")
     parser.add_argument("--descriptions", "-d", help="HOGs description file")
@@ -17,7 +17,8 @@ def parse_arguments():
 
 def get_arg_values():
     parser = parse_arguments()
-    return {"YAML": Path(parser.YAML),
+    return {"input_dir": Path(parser.input_dir),
+            "metadata": Path(parser.metadata),
             "out_filename": Path(parser.out_filename),
             "descriptions": Path(parser.descriptions)}
 
