@@ -67,7 +67,8 @@ def main():
                                         else:
                                             proteins_in_hog[species].append(feats)  
                             analized_hogs[hog] = proteins_in_hog     
-                        except:
+                        except Exception as e:
+                                print(e)
                                 msg = f'Protein failed for species {species}: {protein_id} {hog}\n'
                                 log_fhand.write(msg)
                                 log_fhand.flush()
