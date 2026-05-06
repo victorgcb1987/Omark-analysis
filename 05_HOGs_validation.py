@@ -32,6 +32,7 @@ def main():
     fail_log = []
     analized_hogs = {}
     args = get_arg_values()
+    log_fhand = open(f'{args["prefix"]}_errors.txt', "w")
     with open(args["input_file"]) as input_fhand:
         for row in csv.DictReader(input_fhand, delimiter=","):
             if row["HOGID"] == "Unknown":
@@ -67,18 +68,16 @@ def main():
                                             proteins_in_hog[species].append(feats)  
                             analized_hogs[hog] = proteins_in_hog     
                         except:
-                                msg = f'Protein failed for species {species}: {protein_id}'
-                                fail_log.append(msg)
+                                msg = f'Protein failed for species {species}: {protein_id} {hog}\n'
+                                log_fhand.write(msg)
+                                log_fhand.flush()
                     except:
-                        msg = f'HOG failed: {hog}'
-                        fail_log.append(msg)
+                        msg = f'HOG failed: {hog}\n'
+                        log_fhand.write(msg)
+                        log_fhand.flush()
                         continue
                
-    print(fail_log)
-    print(analized_hogs)
 
-    with open(f'{args["prefix"]}_errors.txt', "w") as log_fhand:
-        log_fhand.write("\n".join(fail_log))
     with open(f'{args["prefix"]}_results.tsv', "w") as out_fhand:
         header = "HOGID,Description,CompletnessScore,NumberOfSpecies,Min,MedianBySpecies,Max,Total,MinExons,MedianExons,MaxExons,DomainsFound\n"
         out_fhand.write(header)
