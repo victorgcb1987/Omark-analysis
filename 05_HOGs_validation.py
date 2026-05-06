@@ -43,6 +43,7 @@ def main():
                 proteins_in_hog = {}
                 if hog not in analized_hogs:
                     try:
+                        print(hog)
                         connection = Client()
                         hogs = connection.hogs
                         proteins = hogs.members(hog)
