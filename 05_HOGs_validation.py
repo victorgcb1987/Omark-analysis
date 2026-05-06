@@ -72,7 +72,8 @@ def main():
                                 msg = f'Protein failed for species {species}: {protein_id} {hog}\n'
                                 log_fhand.write(msg)
                                 log_fhand.flush()
-                    except:
+                    except Exception as e:
+                        print(e)
                         msg = f'HOG failed: {hog}\n'
                         log_fhand.write(msg)
                         log_fhand.flush()
