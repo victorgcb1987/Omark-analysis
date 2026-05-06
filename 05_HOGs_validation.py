@@ -73,7 +73,7 @@ def main():
                                     log_fhand.flush()              
                         analized_hogs[hog] = proteins_in_hog 
                     except Exception as e:
-                        print(e)
+                        print(hog, e)
                         msg = f'HOG failed: {hog}\n'
                         log_fhand.write(msg)
                         log_fhand.flush()
