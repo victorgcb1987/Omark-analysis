@@ -59,7 +59,7 @@ def main():
                                         number_of_exons = isoform["nr_exons"]
                                         feats = {"protein_id": protein_id,
                                                  "domains": set(domains),
-                                                 "num_exons": number_of_exons}
+                                                 "num_exons": int(number_of_exons)}
                                         if species not in proteins_in_hog:
                                             proteins_in_hog[species] = [feats]
                                         else:
@@ -79,27 +79,33 @@ def main():
     with open(f'{args["prefix"]}_errors.txt', "w") as log_fhand:
         log_fhand.write("\n".join(fail_log))
     with open(f'{args["prefix"]}_results.tsv', "w") as out_fhand:
-        header = "HOGID,Description,CompletnessScore,NumberOfSpecies,Min,MedianBySpecies,Max,Total,DomainsFound\n"
+        header = "HOGID,Description,CompletnessScore,NumberOfSpecies,Min,MedianBySpecies,Max,Total,MinExons,MedianExons,MaxExons,DomainsFound\n"
         out_fhand.write(header)
         for hog, values in analized_hogs.items():
             completness, description = get_hog_values(hog)
             num_species = len(values.keys())
             domains_found = {}
             num_proteins = []
+            num_exons = []
             for species, proteins in values.items():
                 num_proteins.append(len(proteins))
                 for protein in proteins:
                     for domain in protein["domains"]:
+                        num_exons.append(protein["num_exons"])
                         if domain not in domains_found:
                             domains_found[domain] = 1
                         else:
                             domains_found[domain] += 1
             min_prots = min(num_proteins)
             max_prots = max(num_proteins)
-            median = statistics.median(num_proteins)
+            median_prots = statistics.median(num_proteins)
+            min_exons = min(num_exons)
+            max_exons = max(num_exons)
             total = sum(num_proteins)
+            median_exons = statistics.median(num_exons)
             line = f'{hog},{description},{completness},{num_species},'
-            line += f'{min_prots},{median},{max_prots},{total},'
+            line += f'{min_prots},{median_prots},{max_prots},{total},'
+            line += f'{min_exons},{median_exons},{max_exons}'
             line += f'{";".join([f"{name}:{value}" for name, value in domains_found.items()])}'
             out_fhand.write(line+"\n")
             
