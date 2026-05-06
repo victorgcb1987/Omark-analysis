@@ -48,36 +48,37 @@ def main():
                         connection = Client()
                         hogs = connection.hogs
                         proteins = hogs.members(hog)
-                        try:
-                            for protein in proteins:
-                                species = protein["species"]["species"]
-                                protein_id = protein["omaid"]   
-                                protein_data = connection.entries[protein_id]
-                                domains = protein_data.domains["regions"]
-                                domains = [domain["name"] for domain in domains]
-                                isoforms = protein_data.isoforms
-                                for isoform in isoforms:
-                                    if isoform["is_main_isoform"]:
-                                        number_of_exons = isoform["nr_exons"]
-                                        feats = {"protein_id": protein_id,
-                                                 "domains": set(domains),
-                                                 "num_exons": int(number_of_exons)}
-                                        if species not in proteins_in_hog:
-                                            proteins_in_hog[species] = [feats]
-                                        else:
-                                            proteins_in_hog[species].append(feats)  
-                            analized_hogs[hog] = proteins_in_hog     
-                        except Exception as e:
-                                print(e)
-                                msg = f'Protein failed for species {species}: {protein_id} {hog}\n'
-                                log_fhand.write(msg)
-                                log_fhand.flush()
+                        for protein in proteins:
+                                try:
+                                    species = protein["species"]["species"]
+                                    protein_id = protein["omaid"]   
+                                    protein_data = connection.entries[protein_id]
+                                    domains = protein_data.domains["regions"]
+                                    domains = [domain["name"] for domain in domains]
+                                    isoforms = protein_data.isoforms
+                                    for isoform in isoforms:
+                                        if isoform["is_main_isoform"]:
+                                            number_of_exons = isoform["nr_exons"]
+                                            feats = {"protein_id": protein_id,
+                                                    "domains": set(domains),
+                                                    "num_exons": int(number_of_exons)}
+                                            if species not in proteins_in_hog:
+                                                proteins_in_hog[species] = [feats]
+                                            else:
+                                                proteins_in_hog[species].append(feats)
+                                except Exception as e:
+                                    print(e)
+                                    msg = f'Protein failed for species {species}: {protein_id} {hog}\n'
+                                    log_fhand.write(msg)
+                                    log_fhand.flush()              
+                        analized_hogs[hog] = proteins_in_hog 
                     except Exception as e:
                         print(e)
                         msg = f'HOG failed: {hog}\n'
                         log_fhand.write(msg)
                         log_fhand.flush()
                         continue
+                        
                
 
     with open(f'{args["prefix"]}_results.tsv', "w") as out_fhand:
