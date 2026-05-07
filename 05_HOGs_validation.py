@@ -44,7 +44,7 @@ def main():
                 proteins_in_hog = {}
                 if hog not in analized_hogs:
                     try:
-                        print(hog)
+
                         connection = Client()
                         hogs = connection.hogs
                         proteins = hogs.members(hog)
@@ -70,7 +70,9 @@ def main():
                                     print(e)
                                     msg = f'Protein failed for species {species}: {protein_id} {hog} {e}\n'
                                     log_fhand.write(msg)
-                                    log_fhand.flush()              
+                                    log_fhand.flush()   
+                        msg = f'HOG finished: {hog}'
+                        log_fhand.write(msg)           
                         analized_hogs[hog] = proteins_in_hog
                         connection.clear_cache()
                     except Exception as e:
