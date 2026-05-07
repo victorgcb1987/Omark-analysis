@@ -68,14 +68,14 @@ def main():
                                                 proteins_in_hog[species].append(feats)
                                 except Exception as e:
                                     print(e)
-                                    msg = f'Protein failed for species {species}: {protein_id} {hog}\n'
+                                    msg = f'Protein failed for species {species}: {protein_id} {hog} {e}\n'
                                     log_fhand.write(msg)
                                     log_fhand.flush()              
                         analized_hogs[hog] = proteins_in_hog
                         connection.clear_cache()
                     except Exception as e:
                         print(hog, e)
-                        msg = f'HOG failed: {hog}\n'
+                        msg = f'Error getting HOG: {hog} {e}\n'
                         log_fhand.write(msg)
                         log_fhand.flush()
                         continue
