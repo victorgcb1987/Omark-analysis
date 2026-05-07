@@ -71,7 +71,7 @@ def main():
                                     msg = f'Protein failed for species {species}: {protein_id} {hog} {e}\n'
                                     log_fhand.write(msg)
                                     log_fhand.flush()   
-                        msg = f'HOG finished: {hog}'
+                        msg = f'HOG finished: {hog}\n'
                         log_fhand.write(msg)           
                         analized_hogs[hog] = proteins_in_hog
                         connection.clear_cache()
