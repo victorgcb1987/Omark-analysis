@@ -82,8 +82,9 @@ def main():
                         analized_hogs[hog] = proteins_in_hog
                         connection.clear_cache()
                     except Exception as e:
+                        hog_end_time = time.time()  
                         print(hog, e)
-                        msg = f'Error getting HOG: {hog} {e}\n'
+                        msg = f'Error getting HOG: {hog} {e}, time consumed {round(hog_end_time-hog_start_time,2)}\n'
                         log_fhand.write(msg)
                         log_fhand.flush()
                         continue
