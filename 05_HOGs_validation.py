@@ -68,6 +68,7 @@ def main():
                                             feats = {"protein_id": protein_id,
                                                     "domains": set(domains),
                                                     "num_exons": int(number_of_exons)}
+                                            print(feats)
                                             if species not in proteins_in_hog:
                                                 proteins_in_hog[species] = [feats]
                                             else:
