@@ -47,7 +47,7 @@ def main():
                     try:
                         hog_start_time = time.time()
                         connection = Client()
-                        time.sleep(2)
+                        time.sleep(3)
                         hogs = connection.hogs[hog]
                         protein_members = hogs.members_url['members']
                         protein_ids  = [m['omaid'] for m in protein_members]
@@ -57,10 +57,10 @@ def main():
                                     prot_start_time = time.time()
                                     species = protein["species"]["species"]
                                     protein_id = protein["omaid"]
-                                    time.sleep(2)   
+                                    time.sleep(3)   
                                     domains = protein.domains["regions"]
                                     domains = [domain["name"] for domain in domains]
-                                    time.sleep(2)
+                                    time.sleep(3)
                                     isoforms = protein.isoforms
                                     for isoform in isoforms:
                                         if isoform["is_main_isoform"]:
