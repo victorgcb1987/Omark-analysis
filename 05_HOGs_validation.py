@@ -3,6 +3,7 @@ from omadb import Client
 from pathlib import Path
 import csv
 import statistics
+import time
 
 
 
@@ -44,12 +45,13 @@ def main():
                 proteins_in_hog = {}
                 if hog not in analized_hogs:
                     try:
-
+                        hog_start_time = time.time()
                         connection = Client()
                         hogs = connection.hogs
                         proteins = hogs.members(hog)
                         for protein in proteins:
                                 try:
+                                    prot_start_time = time.time()
                                     species = protein["species"]["species"]
                                     protein_id = protein["omaid"]   
                                     protein_data = connection.entries[protein_id]
@@ -66,12 +68,16 @@ def main():
                                                 proteins_in_hog[species] = [feats]
                                             else:
                                                 proteins_in_hog[species].append(feats)
+                                            prot_end_time = time.time()
+                                            msg = f'Finished processing for species {species} protein {protein_id}, {hog}, time consumed {round(prot_end_time-prot_start_time,2)}'
                                 except Exception as e:
+                                    prot_end_time = time.time()
                                     print(e)
-                                    msg = f'Protein failed for species {species}: {protein_id} {hog} {e}\n'
+                                    msg = f'Protein failed for species {species}: {protein_id} {hog} {e}, time consumed {round(prot_end_time-prot_start_time,2)}\n'
                                     log_fhand.write(msg)
-                                    log_fhand.flush()   
-                        msg = f'HOG finished: {hog}\n'
+                                    log_fhand.flush()
+                        hog_end_time = time.time()   
+                        msg = f'HOG finished: {hog}, time consumed {round(hog_end_time-hog_start_time,2)}\n'
                         log_fhand.write(msg)           
                         analized_hogs[hog] = proteins_in_hog
                         connection.clear_cache()
