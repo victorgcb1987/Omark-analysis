@@ -1,7 +1,8 @@
-import argparse
 from omadb import Client
 from pathlib import Path
+import argparse
 import csv
+import random
 import statistics
 import time
 
@@ -51,6 +52,9 @@ def main():
                         hogs = connection.hogs[hog]
                         protein_members = hogs.members_url['members']
                         protein_ids  = [m['omaid'] for m in protein_members]
+                        # if more than 1000 proteins_ids API call fails
+                        if len(protein_ids) > 1000:
+                            protein_ids = random.sample(protein_ids, 1000)
                         full_entry_info = connection.entries[protein_ids]
                         for protein in full_entry_info:
                                 try:
