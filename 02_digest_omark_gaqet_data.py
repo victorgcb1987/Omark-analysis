@@ -19,6 +19,7 @@ def parse_arguments():
     parser.add_argument("--input_dir", "-i", help="GAQET input directory")
     parser.add_argument("--metadata_file", "-m", help="Metadata file")
     parser.add_argument("--out_filename", "-o", help="Summary output file")
+    parser.add_argument("--merge_to_root", "-r", help="Merge HOGs to their root", action="store_true")
 
     return parser.parse_args()
 
@@ -27,7 +28,8 @@ def get_arg_values():
     parser = parse_arguments()
     return {"input_dir": Path(parser.input_dir),
             "out_prefix": Path(parser.out_filename),
-            "metadata": Path(parser.metadata_file)}
+            "metadata": Path(parser.metadata_file),
+            "merge_to_root": parser.merge_to_root}
 
 
 
@@ -48,7 +50,7 @@ def get_detenga_results(input_dir):
     return detenga_results
 
 
-def get_omamer_results(input_dir):
+def get_omamer_results(input_dir, merge_to_root=False):
     omamer_results = {}
     omamer_results_folder = input_dir / "OMARK_run"
     for file in list(omamer_results_folder.glob("*.omamer")):
@@ -62,6 +64,8 @@ def get_omamer_results(input_dir):
                     HOGID = line[1]
                     if "N/A" in HOGID:
                         HOGID = "Unknown"
+                    if "." in HOGID and merge_to_root:
+                        HOGID = HOGID.split(".")[0]
                     if HOGID not in omamer_results:
                         omamer_results[HOGID] = [seqID]
                     else:
@@ -119,7 +123,8 @@ def main():
             print(input_dir, species)
             #It assumes that only a subdir by accession!!!!!!
             gaqet_dir = [dir for dir in input_dir.glob("*") if not dir.is_file()][0]
-            hog_classification = get_omamer_results(gaqet_dir)
+            hog_classification = get_omamer_results(gaqet_dir, 
+                                                    merge_to_root=arguments["merge_to_root"])
             omark_classification = get_omark_results(gaqet_dir)
             detenga_classification = get_detenga_results(gaqet_dir)
             summary_by_class = get_summary_by_class(hog_classification, 
