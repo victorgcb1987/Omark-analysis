@@ -26,6 +26,8 @@ def parse_arguments():
                                     )
     parser.add_argument("--YAML", "-i", help="input YAML")
     parser.add_argument("--out_filename", "-o", help="out filename")
+    parser.add_argument("--merge_to_root", "-r", help="Merge HOGs to their root", action="store_true")
+
 
     return parser.parse_args()
 
@@ -33,7 +35,8 @@ def parse_arguments():
 def get_arg_values():
     parser = parse_arguments()
     return {"YAML": Path(parser.YAML),
-            "out_filename": Path(parser.out_filename)}
+            "out_filename": Path(parser.out_filename),
+            "merge_to_root": parser.merge_to_root}
 
 
 def get_detenga_results(input_dir):
@@ -53,7 +56,7 @@ def get_detenga_results(input_dir):
     return detenga_results
 
 
-def get_omamer_results(input_dir):
+def get_omamer_results(input_dir, merge_to_root=False):
     omamer_results = {}
     omamer_results_folder = input_dir / "OMARK_run"
     for file in list(omamer_results_folder.glob("*.omamer")):
@@ -67,6 +70,8 @@ def get_omamer_results(input_dir):
                     HOGID = line[1]
                     if "N/A" in HOGID:
                         HOGID = "Unknown"
+                    if "." in HOGID and merge_to_root:
+                        HOGID = HOGID.split(".")[0]
                     if HOGID not in omamer_results:
                         omamer_results[HOGID] = [seqID]
                     else:
@@ -152,7 +157,7 @@ def main():
             for feature, values in features.items():
                 if "NCBI" in feature:
                     accession, gaqet_dir = get_metadata(values)
-                    hog_classification = get_omamer_results(gaqet_dir)
+                    hog_classification = get_omamer_results(gaqet_dir, merge_to_root=args["merge_to_root"])
                     omark_classification = get_omark_results(gaqet_dir)
                     detenga_classification = get_detenga_results(gaqet_dir)
                     summary_by_class = get_summary_by_class(hog_classification, 
